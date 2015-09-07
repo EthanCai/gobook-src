@@ -7,11 +7,11 @@ import (
 	"strconv"
 	"strings"
 
-	"pkg/mplayer/mlib"
-	"pkg/mplayer/mp"
+	"gobook-src/chapter3/mplayer/pkg/smp/mlib"
+	"gobook-src/chapter3/mplayer/pkg/smp/mp"
 )
 
-var lib *library.MusicManager
+var lib *mlib.MusicManager
 var id int = 1
 var ctrl, signal chan int
 
@@ -26,7 +26,7 @@ func handleLibCommands(tokens []string) {
 		{
 			if len(tokens) == 6 {
 				id++
-				lib.Add(&library.MusicEntry{strconv.Itoa(id), tokens[2], tokens[3], tokens[4], tokens[5]})
+				lib.Add(&mlib.MusicEntry{strconv.Itoa(id), tokens[2], tokens[3], tokens[4], tokens[5]})
 			} else {
 				fmt.Println("USAGE: lib add <name> <artist> <source> <type>")
 			}
@@ -55,7 +55,7 @@ func handlePlayCommand(tokens []string) {
 		return
 	}
 
-	mp.Play(e.Source, e.Type, ctrl, signal)
+	mp.Play(e.Source, e.Type)
 }
 
 func main() {
@@ -66,7 +66,7 @@ lib add <name> <artist> <source> <type> -- Add a music to the music lib
 lib remove <name> -- Remove the specified music from the lib
 play <name> -- Play the specified music
 `)
-	lib = library.NewMusicManager()
+	lib = mlib.NewMusicManager()
 
 	r := bufio.NewReader(os.Stdin)
 

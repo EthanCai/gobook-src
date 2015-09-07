@@ -9,20 +9,18 @@ func main() {
 
 	// 基于myArray数组创建slice，初始内容为myArray的前5个元素
 	var mySlice []int = myArray[:5]
-	
 
 	fmt.Println("Elements of myArray: ")
 
 	for v := range myArray {
 		fmt.Print(v, " ")
 	}
-	
-	
+
 	fmt.Println("\nElements of mySlice: ")
-	
+
 	for i, v := range mySlice {
 		fmt.Print(i, v, " ")
 	}
-	
+
 	fmt.Println()
 }

@@ -1,4 +1,4 @@
-package library
+package mlib
 
 import "errors"
 
@@ -59,14 +59,14 @@ func (m *MusicManager) Remove(index int) *MusicEntry {
 }
 
 func (m *MusicManager) RemoveByName(name string) *MusicEntry {
-    if len(m.musics) == 0 {
-        return nil
-    }
+	if len(m.musics) == 0 {
+		return nil
+	}
 
-    for i, v := range m.musics {
-        if v.Name == name {
-            return m.Remove(i)
-        }
-    }
-    return nil
+	for i, v := range m.musics {
+		if v.Name == name {
+			return m.Remove(i)
+		}
+	}
+	return nil
 }

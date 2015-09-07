@@ -1,9 +1,9 @@
-package library
+package mlib
 
 type MusicEntry struct {
-	Id string
-	Name string
+	Id     string
+	Name   string
 	Artist string
 	Source string
-	Type string
+	Type   string
 }

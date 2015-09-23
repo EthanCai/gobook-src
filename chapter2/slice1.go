@@ -13,13 +13,13 @@ func main() {
 	fmt.Println("Elements of myArray: ")
 
 	for v := range myArray {
-		fmt.Print(v, " ")
+		fmt.Print(v, ", ")
 	}
 
 	fmt.Println("\nElements of mySlice: ")
 
 	for i, v := range mySlice {
-		fmt.Print(i, v, " ")
+		fmt.Print("myslice[", i, "]=", v, ", ")
 	}
 
 	fmt.Println()

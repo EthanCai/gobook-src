@@ -40,4 +40,3 @@ Entering interactive mode (type "help" for commands)
 # 相关知识
 
 - [Golang package testing](https://golang.org/pkg/testing/)
-- 

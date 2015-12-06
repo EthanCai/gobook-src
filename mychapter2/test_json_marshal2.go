@@ -15,9 +15,11 @@ func main() {
 
 	original_text := `[{"text": ["棕木门口，内有大量铜和木布置，造型奇特的桌椅，书架还以花色雕刻的茶色玻璃点缀，不浮华，也没有故弄玄虚的高雅，却又散发着匠心独特低调时尚气质。"], "imageIds": ["7520"], "type": 1}]`
 
-	pagesNet := []FabulaPageNet{}
+	pagesNet := make([]interface{}, 10)
 
 	Unmarshal(original_text, &pagesNet)
+
+	fmt.Println(pagesNet[0].(map[string]interface{})["text"])
 
 	text := Marshal(pagesNet)
 
